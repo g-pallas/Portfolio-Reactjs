@@ -1,17 +1,205 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --page-bg: #0a0e14;
+  --surface-lowest: #05070b;
+  --surface-low: #0f141a;
+  --surface: #151a21;
+  --surface-high: #1b2028;
+  --surface-highest: #20262f;
+  --surface-bright: #262c36;
+  --surface-glass: rgba(32, 38, 47, 0.6);
+  --ghost-border: rgba(68, 72, 79, 0.15);
+  --text-main: #f1f3fc;
+  --text-muted: #a8abb3;
+  --primary: #9ba8ff;
+  --primary-dim: #4963ff;
+  --primary-soft: rgba(155, 168, 255, 0.16);
+  --tertiary: #ff7076;
+  --tertiary-soft: rgba(255, 112, 118, 0.14);
+  --shadow-ambient: 0 32px 90px rgba(25, 34, 66, 0.34);
+}
+
 @layer base {
   html {
-    font-family: 'Manrope', sans-serif;
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
   }
 
   body {
-    background-color: #f8fafc;
-    color: #0f172a;
     min-height: 100vh;
+    background:
+      radial-gradient(circle at top left, rgba(73, 99, 255, 0.14), transparent 24%),
+      radial-gradient(circle at 82% 14%, rgba(255, 112, 118, 0.08), transparent 18%),
+      linear-gradient(180deg, #0a0e14 0%, #0c1118 48%, #0a0e14 100%);
+    color: var(--text-main);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Manrope', sans-serif;
+  }
+
+  a,
+  button,
+  input,
+  textarea {
+    transition:
+      color 180ms ease,
+      background-color 180ms ease,
+      border-color 180ms ease,
+      transform 180ms ease,
+      box-shadow 180ms ease;
+  }
+}
+
+@layer components {
+  .section-card {
+    @apply rounded-[2rem] p-6 backdrop-blur-xl sm:p-8;
+    background: linear-gradient(180deg, rgba(27, 32, 40, 0.96), rgba(21, 26, 33, 0.94));
+    box-shadow: var(--shadow-ambient);
+  }
+
+  .section-kicker {
+    color: var(--primary);
+    @apply text-[11px] font-semibold uppercase tracking-[0.34em];
+  }
+
+  .section-title {
+    @apply mt-4 text-3xl font-extrabold text-[color:var(--text-main)] sm:text-4xl;
+  }
+
+  .section-copy {
+    color: var(--text-muted);
+    @apply mt-4 max-w-2xl text-base leading-7;
+  }
+
+  .hero-button {
+    @apply inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-semibold text-white;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dim));
+    box-shadow: 0 20px 46px rgba(73, 99, 255, 0.26);
+  }
+
+  .hero-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 24px 54px rgba(73, 99, 255, 0.34);
+  }
+
+  .hero-button--secondary {
+    color: var(--primary);
+    @apply border-0;
+    background: var(--surface-highest);
+    box-shadow: none;
+  }
+
+  .hero-button--secondary:hover {
+    background: var(--surface-bright);
+    box-shadow: none;
+  }
+
+  .info-pill {
+    @apply rounded-[1.5rem] p-4;
+    background: rgba(27, 32, 40, 0.92);
+    box-shadow: inset 0 0 0 1px var(--ghost-border);
+  }
+
+  .info-pill__label {
+    color: var(--text-muted);
+    @apply block text-[11px] font-semibold uppercase tracking-[0.24em];
+  }
+
+  .info-pill__value {
+    @apply mt-2 block text-sm font-semibold text-[color:var(--text-main)];
+  }
+
+  .branding-panel {
+    @apply rounded-[1.5rem] p-5;
+    background: rgba(32, 38, 47, 0.84);
+    box-shadow: inset 0 0 0 1px var(--ghost-border);
+  }
+
+  .branding-panel__label {
+    color: var(--text-muted);
+    @apply block text-[11px] font-semibold uppercase tracking-[0.22em];
+  }
+
+  .branding-panel__value {
+    @apply mt-3 block text-base font-semibold leading-6 text-[color:var(--text-main)];
+  }
+
+  .branding-panel__text {
+    color: var(--text-muted);
+    @apply mt-3 text-sm leading-6;
+  }
+
+  .branding-panel__link {
+    color: var(--primary);
+    @apply mt-3 inline-block text-sm font-semibold underline underline-offset-4;
+    text-decoration-color: rgba(155, 168, 255, 0.28);
+  }
+
+  .contact-row {
+    @apply flex flex-col gap-2 rounded-[1.5rem] p-4 sm:flex-row sm:items-center sm:justify-between;
+    background: rgba(32, 38, 47, 0.78);
+    box-shadow: inset 0 0 0 1px var(--ghost-border);
+  }
+
+  .contact-row__label {
+    color: var(--text-muted);
+    @apply text-[11px] font-semibold uppercase tracking-[0.24em];
+  }
+
+  .contact-row__value {
+    @apply text-sm font-medium text-[color:var(--text-main)];
+  }
+
+  .social-link {
+    color: var(--text-muted);
+    @apply flex h-10 w-10 items-center justify-center rounded-full;
+    background: rgba(32, 38, 47, 0.76);
+    box-shadow: inset 0 0 0 1px var(--ghost-border);
+  }
+
+  .social-link:hover {
+    color: var(--primary);
+    background: rgba(38, 44, 54, 0.92);
+  }
+
+  .project-card {
+    @apply flex h-full flex-col overflow-hidden rounded-[2rem];
+    background: linear-gradient(180deg, rgba(27, 32, 40, 0.96), rgba(21, 26, 33, 0.98));
+    box-shadow:
+      inset 0 0 0 1px var(--ghost-border),
+      0 24px 70px rgba(18, 24, 45, 0.28);
+  }
+
+  .project-card:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(180deg, rgba(32, 38, 47, 0.98), rgba(27, 32, 40, 0.98));
+  }
+
+  .form-input {
+    @apply w-full rounded-[1.25rem] border px-4 py-3 text-sm text-[color:var(--text-main)] outline-none;
+    background: var(--surface-low);
+    border-color: transparent;
+    box-shadow: inset 0 -2px 0 rgba(155, 168, 255, 0.12);
+  }
+
+  .form-input::placeholder {
+    color: var(--text-muted);
+  }
+
+  .form-input:focus {
+    box-shadow:
+      inset 0 -2px 0 var(--primary),
+      0 0 0 4px rgba(73, 99, 255, 0.14);
   }
 }
