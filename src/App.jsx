@@ -6,7 +6,7 @@ import projectTtv from './assets/ttv-web.png'
 import projectSoaris from './assets/soaris-mobile-app.png'
 import projectCdms from './assets/CDMS-DocumentPage.png'
 
-const navLinks = [
+const navLinks = [    
   { href: '#branding', label: 'Branding' },
   { href: '#toolkit', label: 'Toolkit' },
   { href: '#sprint-project', label: 'Sprint Project' },
@@ -115,7 +115,7 @@ function SocialLinks({ className = '' }) {
         target="_blank"
         rel="noreferrer"
       >
-        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
+        <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor" aria-hidden="true">
           <path d="M20.45 20.45h-3.55v-5.41c0-1.29-.03-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85v5.51H9.47V9h3.41v1.56h.05c.48-.9 1.66-1.85 3.42-1.85 3.66 0 4.34 2.41 4.34 5.54v6.2zM5.44 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.22 20.45H3.66V9h3.56v11.45z" />
         </svg>
       </a>
@@ -126,7 +126,7 @@ function SocialLinks({ className = '' }) {
         target="_blank"
         rel="noreferrer"
       >
-        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
+        <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor" aria-hidden="true">
           <path d="M12 2C6.47 2 2 6.58 2 12.24c0 4.54 2.87 8.39 6.84 9.75.5.09.68-.22.68-.48 0-.24-.01-.88-.01-1.72-2.78.62-3.37-1.37-3.37-1.37-.46-1.19-1.12-1.5-1.12-1.5-.91-.64.07-.62.07-.62 1.01.07 1.54 1.06 1.54 1.06.9 1.56 2.36 1.11 2.94.85.09-.67.35-1.11.64-1.36-2.22-.26-4.55-1.14-4.55-5.06 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.2 9.2 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.64 1.03 2.76 0 3.93-2.34 4.8-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.58.69.48 3.96-1.36 6.83-5.21 6.83-9.75C22 6.58 17.52 2 12 2z" />
         </svg>
       </a>
@@ -269,28 +269,28 @@ function App() {
     }
   }
 
-  const scrollIndicatorClass = `fixed bottom-6 right-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--surface-highest)] text-lg text-[var(--primary)] shadow-[0_24px_80px_rgba(25,34,66,0.3)] transition ${
+  const scrollIndicatorClass = `fixed bottom-6 right-6 flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-slate-950 text-lg text-white shadow-[0_24px_80px_rgba(15,23,42,0.35)] transition ${
     isIdleVisible ? 'pointer-events-auto translate-y-0 opacity-100' : 'pointer-events-none translate-y-3 opacity-0'
   }`
 
   return (
     <div className="min-h-screen bg-[var(--page-bg)] text-slate-100">
       <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
-        <div className="absolute left-[-8rem] top-[-6rem] h-72 w-72 rounded-full bg-[radial-gradient(circle,_rgba(73,99,255,0.24),_transparent_70%)] blur-2xl" />
-        <div className="absolute right-[-10rem] top-[10rem] h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,_rgba(155,168,255,0.18),_transparent_70%)] blur-3xl" />
-        <div className="absolute bottom-[-10rem] left-[15%] h-[26rem] w-[26rem] rounded-full bg-[radial-gradient(circle,_rgba(255,112,118,0.12),_transparent_70%)] blur-3xl" />
+        <div className="absolute left-[-8rem] top-[-6rem] h-72 w-72 rounded-full bg-[radial-gradient(circle,_rgba(245,158,11,0.35),_transparent_70%)] blur-2xl" />
+        <div className="absolute right-[-10rem] top-[10rem] h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,_rgba(14,165,233,0.22),_transparent_70%)] blur-3xl" />
+        <div className="absolute bottom-[-10rem] left-[15%] h-[26rem] w-[26rem] rounded-full bg-[radial-gradient(circle,_rgba(249,115,22,0.22),_transparent_70%)] blur-3xl" />
       </div>
 
-      <header className="sticky top-0 z-30 bg-[rgba(10,14,20,0.82)] backdrop-blur-xl">
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-6 px-4 py-4">
+      <header className="sticky top-0 z-30 border-b border-white/10 bg-slate-950/75 backdrop-blur-xl">
+        <div className="flex items-center justify-between w-full max-w-6xl gap-6 px-4 py-4 mx-auto">
           <a className="flex items-center gap-3 text-sm font-semibold tracking-[0.22em] text-white" href="#home">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[linear-gradient(135deg,var(--primary),var(--primary-dim))] text-white shadow-[0_14px_34px_rgba(73,99,255,0.32)]">
+            <span className="flex items-center justify-center w-10 h-10 border rounded-full border-amber-300/40 bg-white/10 text-amber-200">
               KS
             </span>
             <span className="hidden sm:inline">KYLE SABATIN</span>
           </a>
 
-          <nav className="hidden items-center gap-8 text-sm text-slate-300 lg:flex">
+          <nav className="items-center hidden gap-8 text-sm text-slate-300 lg:flex">
             {navLinks.map((link) => (
               <a key={link.href} className="transition hover:text-white" href={link.href}>
                 {link.label}
@@ -308,19 +308,19 @@ function App() {
       </header>
 
       <main>
-        <section className="relative overflow-hidden px-4 pb-20 pt-14 lg:pb-24 lg:pt-20" id="home">
+        <section className="relative px-4 pb-20 overflow-hidden pt-14 lg:pb-24 lg:pt-20" id="home">
           <div className="mx-auto grid w-full max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[var(--primary)]">Professional Portfolio</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-amber-200/90">Professional Portfolio</p>
               <h1 className="mt-5 max-w-3xl text-5xl font-extrabold leading-[0.96] text-white sm:text-6xl lg:text-7xl">
                 Front-end work shaped for clarity, responsiveness, and real users.
               </h1>
-              <p className="mt-6 max-w-2xl text-base leading-7 text-slate-300">
+              <p className="max-w-2xl mt-6 text-base leading-7 text-slate-300">
                 I&apos;m Kyle Sabatin, an aspiring Front-End Developer and Computer Engineering student building polished web
                 and mobile interfaces with React, React Native, and a strong focus on user experience.
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 mt-8">
                 <a className="hero-button" href="#sprint-project">
                   View sprint project
                 </a>
@@ -329,7 +329,7 @@ function App() {
                 </a>
               </div>
 
-              <div className="mt-10 grid gap-4 sm:grid-cols-3">
+              <div className="grid gap-4 mt-10 sm:grid-cols-3">
                 <div className="info-pill">
                   <span className="info-pill__label">Professional title</span>
                   <strong className="info-pill__value">Front-End Developer</strong>
@@ -346,19 +346,19 @@ function App() {
             </div>
 
             <div className="relative">
-              <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-[2rem] bg-gradient-to-br from-[rgba(73,99,255,0.22)] via-[rgba(155,168,255,0.08)] to-transparent blur-sm" />
-              <div className="relative overflow-hidden rounded-[2rem] bg-[rgba(32,38,47,0.52)] p-4 shadow-[0_30px_80px_rgba(25,34,66,0.34)] backdrop-blur">
+              <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-[2rem] bg-gradient-to-br from-amber-400/20 via-sky-400/10 to-transparent blur-sm" />
+              <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-4 shadow-[0_30px_80px_rgba(2,6,23,0.45)] backdrop-blur">
                 <img className="h-[28rem] w-full rounded-[1.5rem] object-cover object-center" src={heroImage} alt="Kyle Sabatin portrait" />
-                <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                  <div className="rounded-2xl bg-[var(--surface-high)] p-4 shadow-[inset_0_0_0_1px_rgba(68,72,79,0.12)]">
-                    <p className="text-xs uppercase tracking-[0.28em] text-[var(--text-muted)]">Professional summary</p>
+                <div className="grid gap-3 mt-4 sm:grid-cols-2">
+                  <div className="p-4 border rounded-2xl border-white/10 bg-slate-950/70">
+                    <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Professional summary</p>
                     <p className="mt-2 text-sm leading-6 text-slate-200">
                       Hands-on experience building responsive web and mobile applications with clean UI, authentication,
                       and practical product thinking.
                     </p>
                   </div>
-                  <div className="rounded-2xl bg-[var(--surface-high)] p-4 shadow-[inset_0_0_0_1px_rgba(68,72,79,0.12)]">
-                    <p className="text-xs uppercase tracking-[0.28em] text-[var(--text-muted)]">Education</p>
+                  <div className="p-4 border rounded-2xl border-white/10 bg-slate-950/70">
+                    <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Education</p>
                     <p className="mt-2 text-sm leading-6 text-slate-200">
                       BS Computer Engineering
                       <br />
@@ -381,7 +381,7 @@ function App() {
                 turning product ideas into usable digital experiences.
               </p>
 
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <div className="grid gap-4 mt-8 sm:grid-cols-2">
                 <div className="branding-panel">
                   <span className="branding-panel__label">Full name</span>
                   <strong className="branding-panel__value">Kyle Sabatin</strong>
@@ -403,7 +403,7 @@ function App() {
             <div className="section-card">
               <p className="section-kicker">Contact</p>
               <h2 className="section-title">Professional Details</h2>
-              <div className="mt-8 grid gap-4">
+              <div className="grid gap-4 mt-8">
                 {contactItems.map((item) => (
                   <div key={item.label} className="contact-row">
                     <span className="contact-row__label">{item.label}</span>
@@ -422,7 +422,7 @@ function App() {
         </section>
 
         <section className="px-4 py-16" id="toolkit">
-          <div className="mx-auto w-full max-w-6xl">
+          <div className="w-full max-w-6xl mx-auto">
             <div className="max-w-2xl">
               <p className="section-kicker">Section 2</p>
               <h2 className="section-title">Skills &amp; Toolkit</h2>
@@ -432,14 +432,14 @@ function App() {
               </p>
             </div>
 
-            <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            <div className="grid gap-5 mt-10 md:grid-cols-2 xl:grid-cols-4">
               {toolkitGroups.map((group) => (
                 <article key={group.title} className="section-card">
                   <h3 className="text-lg font-semibold text-white">{group.title}</h3>
                   <ul className="mt-4 space-y-3 text-sm text-slate-300">
                     {group.items.map((item) => (
                       <li key={item} className="flex gap-3 leading-6">
-                        <span className="mt-2 h-2 w-2 rounded-full bg-[var(--primary)]" />
+                        <span className="w-2 h-2 mt-2 rounded-full bg-amber-300" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -454,28 +454,28 @@ function App() {
           <div className="mx-auto grid w-full max-w-6xl gap-6 lg:grid-cols-[1.05fr_0.95fr]">
             <div className="section-card">
               <p className="section-kicker">Section 3</p>
-              <h2 className="section-title">Project Experience</h2>
-              <p className="section-copy">
+                <h2 className="section-title">Project Experience</h2>
+                <p className="section-copy">
                 This section now highlights the web application project documented in my accomplishment reports, which better
                 represents my sprint-based frontend work.
-              </p>
+                </p>
 
-              <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                <div className="branding-panel">
-                  <span className="branding-panel__label">Project name</span>
+                <div className="grid gap-4 mt-8 sm:grid-cols-3">
+                  <div className="branding-panel">
+                    <span className="branding-panel__label">Project name</span>
                   <strong className="branding-panel__value">Certicode Compliance &amp; Document Management Web Application</strong>
-                </div>
-                <div className="branding-panel">
-                  <span className="branding-panel__label">Role</span>
+                  </div>
+                  <div className="branding-panel">
+                    <span className="branding-panel__label">Role</span>
                   <strong className="branding-panel__value">Frontend Developer</strong>
-                </div>
-                <div className="branding-panel">
-                  <span className="branding-panel__label">Date</span>
+                  </div>
+                  <div className="branding-panel">
+                    <span className="branding-panel__label">Date</span>
                   <strong className="branding-panel__value">March 5-12, 2026</strong>
+                  </div>
                 </div>
-              </div>
 
-              <div className="mt-6 rounded-[1.75rem] bg-[var(--surface-low)] p-6 shadow-[inset_0_0_0_1px_rgba(68,72,79,0.12)]">
+              <div className="mt-6 rounded-[1.75rem] border border-white/10 bg-slate-950/55 p-6">
                 <p className="text-sm leading-7 text-slate-300">
                   Certicode is a compliance and document management web application built around document tracking, admin-side
                   user management, alerts, and structured viewing flows. My focus was implementing the frontend experience to
@@ -484,7 +484,7 @@ function App() {
                 <ul className="mt-5 space-y-3 text-sm text-slate-200">
                   {sprintHighlights.map((item) => (
                     <li key={item} className="flex gap-3 leading-6">
-                      <span className="mt-2 h-2 w-2 rounded-full bg-[var(--primary)]" />
+                      <span className="w-2 h-2 mt-2 rounded-full bg-sky-300" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -492,9 +492,9 @@ function App() {
               </div>
             </div>
 
-            <div className="section-card overflow-hidden">
+            <div className="overflow-hidden section-card">
               <img className="h-64 w-full rounded-[1.75rem] object-cover object-top" src={projectCdms} alt="Certicode document page preview" />
-              <div className="mt-6 grid gap-4">
+              <div className="grid gap-4 mt-6">
                 <div className="branding-panel">
                   <span className="branding-panel__label">Key technologies</span>
                   <p className="branding-panel__text">React, Vite, Tailwind CSS, reusable components, routing, dropdown logic, and responsive layouts</p>
@@ -516,7 +516,7 @@ function App() {
         </section>
 
         <section className="px-4 py-16" id="achievements">
-          <div className="mx-auto w-full max-w-6xl">
+          <div className="w-full max-w-6xl mx-auto">
             <div className="max-w-2xl">
               <p className="section-kicker">Section 4</p>
               <h2 className="section-title">Achievements &amp; Certifications</h2>
@@ -526,14 +526,14 @@ function App() {
               </p>
             </div>
 
-            <div className="mt-10 grid gap-5 lg:grid-cols-3">
+            <div className="grid gap-5 mt-10 lg:grid-cols-3">
               {achievementCards.map((card) => (
                 <article key={card.title} className="section-card">
                   <h3 className="text-lg font-semibold text-white">{card.title}</h3>
                   <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-300">
                     {card.items.map((item) => (
                       <li key={item} className="flex gap-3">
-                        <span className="mt-2 h-2 w-2 rounded-full bg-[var(--tertiary)]" />
+                        <span className="w-2 h-2 mt-2 bg-orange-300 rounded-full" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -545,7 +545,7 @@ function App() {
         </section>
 
         <section className="px-4 py-16" id="projects">
-          <div className="mx-auto w-full max-w-6xl">
+          <div className="w-full max-w-6xl mx-auto">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
               <div className="max-w-2xl">
                 <p className="section-kicker">Featured Work</p>
@@ -555,29 +555,29 @@ function App() {
                   front-end execution in different product contexts.
                 </p>
               </div>
-              <a className="hero-button hero-button--secondary self-start" href="https://github.com/g-pallas" target="_blank" rel="noreferrer">
+              <a className="self-start hero-button hero-button--secondary" href="https://github.com/g-pallas" target="_blank" rel="noreferrer">
                 View GitHub profile
               </a>
             </div>
 
-            <div className="mt-10 grid gap-6 xl:grid-cols-3">
+            <div className="grid gap-6 mt-10 xl:grid-cols-3">
               {featuredProjects.map((project) => (
                 <article key={project.title} className="project-card">
-                  <img className="h-56 w-full object-cover object-top" src={project.image} alt={project.title} />
-                  <div className="flex h-full flex-col p-6">
-                    <p className="text-xs uppercase tracking-[0.28em] text-[var(--primary)]">{project.subtitle}</p>
+                  <img className="object-cover object-top w-full h-56" src={project.image} alt={project.title} />
+                  <div className="flex flex-col h-full p-6">
+                    <p className="text-xs uppercase tracking-[0.28em] text-amber-200/85">{project.subtitle}</p>
                     <h3 className="mt-3 text-2xl font-semibold text-white">{project.title}</h3>
                     <p className="mt-4 text-sm leading-6 text-slate-300">{project.text}</p>
 
-                    <div className="mt-5 flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 mt-5">
                       {project.tags.map((tag) => (
-                        <span key={tag} className="rounded-full bg-[var(--surface-highest)] px-3 py-1 text-xs font-semibold text-slate-200 shadow-[inset_0_0_0_1px_rgba(68,72,79,0.12)]">
+                        <span key={tag} className="px-3 py-1 text-xs font-semibold border rounded-full border-white/10 bg-white/5 text-slate-200">
                           {tag}
                         </span>
                       ))}
                     </div>
 
-                    <div className="mt-6 flex flex-wrap gap-4 text-sm font-semibold text-white">
+                    <div className="flex flex-wrap gap-4 mt-6 text-sm font-semibold text-white">
                       <a href={project.code} target="_blank" rel="noreferrer">
                         Source code
                       </a>
@@ -604,7 +604,7 @@ function App() {
                 real-world product work.
               </p>
 
-              <div className="mt-8 grid gap-4">
+              <div className="grid gap-4 mt-8">
                 {contactItems.slice(0, 3).map((item) => (
                   <div key={item.label} className="contact-row">
                     <span className="contact-row__label">{item.label}</span>
@@ -619,12 +619,12 @@ function App() {
                 ))}
               </div>
 
-              <div className="mt-8 overflow-hidden rounded-[1.75rem] bg-[var(--surface-low)] p-4 shadow-[inset_0_0_0_1px_rgba(68,72,79,0.12)]">
+              <div className="mt-8 overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-950/60 p-4">
                 <img className="w-full rounded-[1.25rem]" src={githubPreview} alt="GitHub profile preview" />
               </div>
             </div>
 
-            <form className="section-card grid gap-4" onSubmit={handleContactSubmit}>
+            <form className="grid gap-4 section-card" onSubmit={handleContactSubmit}>
               <p className="section-kicker">Message form</p>
               <h2 className="section-title">Send a direct message</h2>
               <label className="grid gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">
@@ -637,7 +637,7 @@ function App() {
               </label>
               <label className="grid gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">
                 Message
-                <textarea className="form-input min-h-40 resize-y" rows="5" placeholder="Tell me about your project or opportunity." name="message" required />
+                <textarea className="resize-y form-input min-h-40" rows="5" placeholder="Tell me about your project or opportunity." name="message" required />
               </label>
               <input className="hidden" type="text" name="website" tabIndex="-1" autoComplete="off" />
               {formStatus && (
@@ -651,7 +651,7 @@ function App() {
                   {formStatus.message}
                 </p>
               )}
-              <button className="hero-button w-full justify-center disabled:cursor-not-allowed disabled:opacity-70" type="submit" disabled={isSubmitting}>
+              <button className="justify-center w-full hero-button disabled:cursor-not-allowed disabled:opacity-70" type="submit" disabled={isSubmitting}>
                 {isSubmitting ? 'Sending...' : 'Send message'}
               </button>
             </form>
@@ -659,8 +659,8 @@ function App() {
         </section>
       </main>
 
-      <footer className="px-4 py-8">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+      <footer className="px-4 py-8 border-t border-white/10">
+        <div className="flex flex-col w-full max-w-6xl gap-3 mx-auto text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
           <p>Built as a live professional portfolio aligned with the 2026 portfolio task.</p>
           <p>© 2026 Kyle Sabatin</p>
         </div>
